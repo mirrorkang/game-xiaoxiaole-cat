@@ -105,6 +105,7 @@ cat-ramen-match3/
 │   ├── cat-chef.svg    # Q 版阿汤
 │   ├── bowl.svg        # 上菜用的拉面碗
 │   └── characters/     # 阿汤、豆柴立绘
+├── favicon.svg         # 拉面猫站点图标
 ├── preview-title.png   # 标题页预览
 ├── preview-game.png    # 游戏画面预览
 └── README.md
