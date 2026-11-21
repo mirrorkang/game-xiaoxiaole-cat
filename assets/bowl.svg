@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 486 382">
+      <defs>
+        <radialGradient id="bowlGlow"><stop offset="0" stop-color="#ffcf7d" stop-opacity=".55"/><stop offset="1" stop-color="#ff9b3d" stop-opacity="0"/></radialGradient>
+        <linearGradient id="bowlBody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff8e8"/><stop offset=".55" stop-color="#f7e2be"/><stop offset="1" stop-color="#dcb887"/></linearGradient>
+        <linearGradient id="broth" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd984"/><stop offset=".55" stop-color="#f2a83f"/><stop offset="1" stop-color="#c97522"/></linearGradient>
+        <linearGradient id="eggWhite" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fffdf6"/><stop offset="1" stop-color="#f0dcc0"/></linearGradient>
+        <radialGradient id="yolk"><stop offset="0" stop-color="#ffd15c"/><stop offset=".62" stop-color="#ffae2e"/><stop offset="1" stop-color="#e4861d"/></radialGradient>
+        <linearGradient id="nori" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3d725d"/><stop offset="1" stop-color="#183f35"/></linearGradient>
+        <linearGradient id="chashu" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffc0b8"/><stop offset=".55" stop-color="#f39a92"/><stop offset="1" stop-color="#d97770"/></linearGradient>
+      </defs>
+
+      <!-- warm glow -->
+      <ellipse cx="243" cy="216" rx="236" ry="168" fill="url(#bowlGlow)"/>
+
+      <!-- bowl body -->
+      <path d="M60 142 Q62 296 150 332 Q243 368 336 332 Q424 296 426 142 Z" fill="url(#bowlBody)" stroke="#4a2a18" stroke-width="9" stroke-linejoin="round"/>
+      <!-- bowl rim -->
+      <ellipse cx="243" cy="142" rx="183" ry="43" fill="#fff8e8" stroke="#4a2a18" stroke-width="9"/>
+      <ellipse cx="243" cy="142" rx="160" ry="33" fill="url(#broth)" stroke="#b9761f" stroke-width="4"/>
+
+      <!-- broth surface swirls -->
+      <g fill="none" stroke="#ffe5a1" stroke-width="3" opacity=".55" stroke-linecap="round">
+        <path d="M142 134 Q182 120 222 136 Q258 150 290 132"/>
+        <path d="M170 151 Q210 140 250 152 Q282 161 312 146"/>
+      </g>
+
+      <!-- noodles peeking -->
+      <g fill="none" stroke="#ffd76f" stroke-width="8" stroke-linecap="round">
+        <path d="M122 132 Q140 112 160 132 Q180 152 198 130"/>
+        <path d="M300 140 Q318 118 338 140 Q354 158 374 138"/>
+        <path d="M204 114 Q222 96 240 116"/>
+      </g>
+
+      <!-- nori -->
+      <g transform="translate(188 50) rotate(-7)">
+        <rect x="0" y="0" width="58" height="104" rx="7" fill="url(#nori)" stroke="#102d26" stroke-width="4"/>
+        <path d="M10 14 L48 14 M10 26 L48 26 M10 38 L48 38" stroke="#79a993" stroke-width="2" opacity=".45"/>
+        <path d="M8 4 L22 4" stroke="#c8e3d3" stroke-width="3" stroke-linecap="round" opacity=".55"/>
+      </g>
+      <g transform="translate(244 56) rotate(6)">
+        <rect x="0" y="0" width="52" height="94" rx="7" fill="url(#nori)" stroke="#102d26" stroke-width="4"/>
+        <path d="M9 14 L43 14 M9 25 L43 25" stroke="#79a993" stroke-width="2" opacity=".45"/>
+      </g>
+
+      <!-- chashu slices -->
+      <g transform="translate(136 98)">
+        <circle cx="0" cy="0" r="42" fill="url(#chashu)" stroke="#a8524d" stroke-width="5"/>
+        <circle cx="0" cy="0" r="31" fill="#ffd3c9" stroke="#ce7770" stroke-width="3"/>
+        <path d="M-5 -27 C19 -27 30 -8 18 9 C6 27 -17 21 -22 3 C-27 -13 -17 -24 -5 -27" fill="none" stroke="#c96a62" stroke-width="5" stroke-linecap="round"/>
+        <path d="M-23 -18 Q-12 -26 0 -24" fill="none" stroke="#fff1e7" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+      </g>
+      <g transform="translate(102 150) rotate(-10)">
+        <circle cx="0" cy="0" r="34" fill="url(#chashu)" stroke="#a8524d" stroke-width="5"/>
+        <circle cx="0" cy="0" r="24" fill="#ffd3c9" stroke="#ce7770" stroke-width="3"/>
+        <path d="M-4 -21 C14 -21 23 -7 14 6 C4 20 -13 16 -17 3 C-21 -9 -13 -19 -4 -21" fill="none" stroke="#c96a62" stroke-width="4" stroke-linecap="round"/>
+      </g>
+
+      <!-- egg -->
+      <g transform="translate(342 112) rotate(8)">
+        <ellipse cx="0" cy="0" rx="52" ry="38" fill="url(#eggWhite)" stroke="#c9a77c" stroke-width="4"/>
+        <ellipse cx="4" cy="1" rx="27" ry="23" fill="url(#yolk)" stroke="#d78e20" stroke-width="3"/>
+        <ellipse cx="-5" cy="-7" rx="8" ry="4" fill="#fff3ba" opacity=".75" transform="rotate(-22 -5 -7)"/>
+      </g>
+
+      <!-- naruto -->
+      <g transform="translate(278 160) rotate(-6)">
+        <circle cx="0" cy="0" r="32" fill="#fffaf0" stroke="#e7cfb0" stroke-width="4"/>
+        <path d="M0 -19 C13 -19 20 -8 14 3 C8 14 -8 16 -14 6 C-20 -4 -12 -16 0 -19" fill="none" stroke="#ff9db2" stroke-width="7" stroke-linecap="round"/>
+      </g>
+
+      <!-- scallions + sesame -->
+      <g stroke="#78c45b" stroke-width="6" fill="none" stroke-linecap="round">
+        <circle cx="222" cy="122" r="7"/><circle cx="254" cy="145" r="6"/><circle cx="316" cy="108" r="6"/>
+        <circle cx="150" cy="176" r="6"/><circle cx="366" cy="148" r="5"/><circle cx="208" cy="174" r="5"/>
+        <circle cx="332" cy="168" r="4"/><circle cx="270" cy="104" r="5"/>
+      </g>
+      <g fill="#fff4d1">
+        <circle cx="238" cy="112" r="2.4"/><circle cx="292" cy="126" r="2"/><circle cx="176" cy="146" r="2.2"/>
+        <circle cx="346" cy="132" r="1.8"/><circle cx="262" cy="176" r="2"/><circle cx="198" cy="158" r="1.7"/>
+      </g>
+
+      <!-- bowl pattern band -->
+      <path d="M72 226 Q243 266 414 226" fill="none" stroke="#e85d3f" stroke-width="13" opacity=".88"/>
+      <path d="M76 244 Q243 282 410 244" fill="none" stroke="#e85d3f" stroke-width="5" opacity=".55"/>
+      <g fill="none" stroke="#3f6f7d" stroke-width="4" opacity=".55">
+        <path d="M96 282 Q112 266 128 282 Q144 298 160 282"/>
+        <path d="M326 282 Q342 266 358 282 Q374 298 390 282"/>
+      </g>
+
+      <!-- shop cat logo on bowl -->
+      <g transform="translate(243 302)">
+        <circle cx="0" cy="0" r="34" fill="#fff7e7" opacity=".92"/>
+        <path d="M-22 -8 L-27 -29 L-7 -20 Q0 -23 7 -20 L27 -29 L22 -8 C23 6 13 16 0 16 C-13 16 -23 6 -22 -8 Z" fill="#e85d3f"/>
+        <path d="M-13 -4 Q-8 -9 -3 -4 M3 -4 Q8 -9 13 -4" fill="none" stroke="#fff4de" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M-3 3 Q0 6 3 3" fill="none" stroke="#fff4de" stroke-width="2.5" stroke-linecap="round"/>
+        <g stroke="#fff4de" stroke-width="1.5" opacity=".75"><path d="M-20 4 L-10 4"/><path d="M10 4 L20 4"/></g>
+      </g>
+
+      <!-- highlight -->
+      <path d="M94 186 Q102 258 154 300" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" opacity=".2"/>
+      <path d="M368 190 Q360 250 330 286" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".12"/>
+
+      <!-- steam wisps -->
+      <g fill="none" stroke="#fff6e5" stroke-width="7" stroke-linecap="round" opacity=".35">
+        <path d="M178 96 Q158 70 178 48 Q194 30 180 8"/>
+        <path d="M284 92 Q304 64 286 42 Q270 22 286 0"/>
+        <path d="M228 84 Q208 58 228 34"/>
+      </g>
+      <!-- rising sparkles -->
+      <g fill="#ffe8ae" opacity=".8">
+        <circle cx="170" cy="46" r="2.2"/><circle cx="310" cy="32" r="2.6"/><circle cx="254" cy="22" r="1.7"/>
+        <path d="M336 64 l3 7 -7 3 7 3 -3 7 7 -3 3 7 3 -7 7 3 -3 -7 7 -3 -7 -3 3 -7 -7 3 -3 -7 Z" opacity=".65"/>
+      </g>
+    </svg>

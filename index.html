@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#123c3a">
+  <title>猫猫拉面屋 · 锅气全开！</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- reusable icons -->
+  <svg class="svg-sprite" aria-hidden="true">
+    <symbol id="i-star" viewBox="0 0 32 32"><path d="M16 2.2 20.1 12l10.4 1.1-7.9 7 2.4 10.2L16 24.9 6.9 30.3l2.4-10.2-7.9-7L11.9 12 16 2.2Z" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M16 7v7" stroke="#fff8e8" stroke-width="2" stroke-linecap="round" opacity=".8"/></symbol>
+    <symbol id="i-flame" viewBox="0 0 48 48"><path d="M25 4c3 10 13 12 11 24-1 8-7 14-15 14S7 36 7 28c0-9 8-10 10-18 2 5 6 6 8-6Z" fill="currentColor" stroke="#8f2a1b" stroke-width="2" stroke-linejoin="round"/><path d="M23 23c2 5 7 6 6 12-1 4-4 6-8 6-4 0-7-3-7-7 0-4 4-5 5-9 1 2 3 3 4-2Z" fill="#fff2cf"/></symbol>
+    <symbol id="i-paw" viewBox="0 0 32 32"><ellipse cx="16" cy="21" rx="7" ry="6" fill="currentColor"/><circle cx="7.5" cy="14" r="3" fill="currentColor"/><circle cx="13" cy="8.5" r="3.2" fill="currentColor"/><circle cx="20" cy="8.5" r="3.2" fill="currentColor"/><circle cx="25.5" cy="14" r="3" fill="currentColor"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="M15 5 8 12l7 7" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1.5" fill="currentColor"/><rect x="14" y="4" width="4" height="16" rx="1.5" fill="currentColor"/></symbol>
+    <symbol id="i-sound" viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4V9Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 9c2 2 2 4 0 6M19.5 6c4 4 4 8 0 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+    <symbol id="i-mute" viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4V9Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="m16 9 5 5m0-5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+    <symbol id="i-bowl" viewBox="0 0 32 32"><path d="M4 14h24c0 8-4 13-12 13S4 22 4 14Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M8 10c0-2 2-2 2-4M13 10c0-2 2-2 2-4M18 10c0-2 2-2 2-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".7"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  </svg>
+
+  <div id="app">
+    <!-- ================= TITLE ================= -->
+    <section id="titleScreen" class="screen title-screen">
+      <div class="title-sky" aria-hidden="true">
+        <div class="title-moon"></div>
+        <div class="title-stars"></div>
+        <div class="title-dust" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="title-window"></div>
+        <div class="title-lantern">面</div>
+        <div class="title-counter"></div>
+        <div class="title-steam"><i></i><i></i><i></i></div>
+      </div>
+
+      <div class="title-copy">
+        <p class="eyebrow"><span></span> 一间只在傍晚开门的小店</p>
+        <h1 class="logo">猫猫<span>拉面屋</span></h1>
+        <p class="logo-sub">锅气全开！</p>
+        <p class="title-desc">消食材、下锅，把第一碗面端给豆柴。</p>
+        <p class="title-lore">汤婆婆出门旅行了。她把百年老汤和这间小店，留给了阿汤。</p>
+        <div class="title-actions">
+          <button id="startBtn" class="btn btn-primary" type="button">
+            <svg class="btn-icon"><use href="#i-bowl"></use></svg>
+            开始营业
+          </button>
+          <button id="titleSoundBtn" class="btn-icon-round" type="button" aria-label="开关音效">
+            <svg class="icon"><use href="#i-sound"></use></svg>
+          </button>
+        </div>
+        <p id="bestRecord" class="best-record hidden"></p>
+      </div>
+
+      <div class="title-chef-wrap" aria-hidden="true">
+        <img src="assets/characters/atong.png" alt="">
+      </div>
+      <div class="title-bowl-wrap" aria-hidden="true">
+        <img src="assets/bowl.svg" alt="">
+      </div>
+      <div class="title-footer">火不灭 · 汤不凉 · 客不饿</div>
+    </section>
+
+    <!-- ================= GAME ================= -->
+    <section id="gameScreen" class="screen game-screen hidden">
+      <div class="scene" aria-hidden="true">
+        <div class="scene-wall"></div>
+        <div class="scene-window">
+          <div class="window-sky">
+            <div class="window-clouds"></div>
+            <i class="moon"></i>
+            <i class="star s1"></i><i class="star s2"></i><i class="star s3"></i>
+            <i class="star s4"></i><i class="star s5"></i><i class="star s6"></i>
+            <div class="roof r1"></div><div class="roof r2"></div><div class="roof r3"></div>
+            <div class="window-cat"><i></i></div>
+            <div class="window-rain"></div>
+          </div>
+        </div>
+        <div class="scene-lantern"><span>面</span></div>
+        <div class="scene-counter"></div>
+        <div class="scene-glow"></div>
+        <div class="wall-menu" aria-hidden="true"><b>拉面</b><span>酱油 · 味噌 · 豚骨</span></div>
+        <div class="counter-plant" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
+        <div class="scene-motes" aria-hidden="true">
+          <i style="--x:9%;--y:72%;--d:13s;--delay:-1s"></i>
+          <i style="--x:19%;--y:36%;--d:16s;--delay:-6s"></i>
+          <i style="--x:36%;--y:22%;--d:12s;--delay:-3s"></i>
+          <i style="--x:47%;--y:64%;--d:18s;--delay:-9s"></i>
+          <i style="--x:64%;--y:30%;--d:14s;--delay:-5s"></i>
+          <i style="--x:78%;--y:58%;--d:17s;--delay:-12s"></i>
+          <i style="--x:89%;--y:24%;--d:12s;--delay:-2s"></i>
+          <i style="--x:58%;--y:82%;--d:15s;--delay:-7s"></i>
+        </div>
+        <div class="scene-embers" aria-hidden="true">
+          <i style="--x:62%;--y:74%;--d:4.2s;--delay:-1s"></i>
+          <i style="--x:67%;--y:70%;--d:3.4s;--delay:-2.2s"></i>
+          <i style="--x:73%;--y:76%;--d:4.8s;--delay:-3.1s"></i>
+          <i style="--x:79%;--y:72%;--d:3.8s;--delay:-.6s"></i>
+          <i style="--x:84%;--y:78%;--d:4.5s;--delay:-2.8s"></i>
+        </div>
+      </div>
+      <div id="comboPulse" class="combo-pulse" aria-hidden="true"></div>
+
+      <header class="hud">
+        <div class="hud-left">
+          <button id="backBtn" class="round-btn" type="button" aria-label="回到标题">
+            <svg class="icon"><use href="#i-back"></use></svg>
+          </button>
+          <div class="level-chip">
+            <b>第 1 关</b>
+            <span>第一碗 · 酱油拉面</span>
+          </div>
+        </div>
+
+        <div class="order-card" id="orderCard">
+          <div class="portrait-wrap">
+            <img src="assets/characters/doucha-portrait.png" alt="豆柴">
+            <span class="new-tag">新客</span>
+          </div>
+          <div class="order-copy">
+            <div class="order-name">豆柴 <em>柴犬</em></div>
+            <div class="order-speech">哼，酱油拉面，多放叉烧。</div>
+          </div>
+          <div class="order-items" id="orderItems">
+            <div class="order-item" data-type="noodle"><span class="oi-icon"></span><span class="oi-label">面条</span><b><i>0</i>/10</b></div>
+            <div class="order-item" data-type="egg"><span class="oi-icon"></span><span class="oi-label">鸡蛋</span><b><i>0</i>/6</b></div>
+            <div class="order-item" data-type="chashu"><span class="oi-icon"></span><span class="oi-label">叉烧</span><b><i>0</i>/4</b></div>
+            <div class="order-item" data-type="nori"><span class="oi-icon"></span><span class="oi-label">海苔</span><b><i>0</i>/6</b></div>
+          </div>
+          <div id="orderStamp" class="order-stamp hidden">订单完成！</div>
+          <div class="order-progress">
+            <span>订单进度 <b id="orderCount">0</b> / <span id="orderTotalNeed">26</span></span>
+            <div class="order-bar"><i id="orderBar"></i></div>
+          </div>
+        </div>
+
+        <div class="hud-right">
+          <div class="moves-card">
+            <span>剩余步数</span>
+            <b id="movesCount">18</b>
+            <em>步</em>
+          </div>
+          <button id="soundBtn" class="round-btn" type="button" aria-label="开关音效">
+            <svg class="icon"><use href="#i-sound"></use></svg>
+          </button>
+          <button id="pauseBtn" class="round-btn" type="button" aria-label="暂停">
+            <svg class="icon"><use href="#i-pause"></use></svg>
+          </button>
+        </div>
+      </header>
+
+      <main class="play">
+        <div class="board-wrap">
+          <div class="board-frame">
+            <div class="board" id="board" aria-label="食材棋盘"></div>
+            <div class="board-plaque">食材台</div>
+          </div>
+          <div class="board-hint" id="boardHint" aria-live="polite"></div>
+        </div>
+
+        <aside class="kitchen" aria-label="阿汤的灶台">
+          <div class="kitchen-window" aria-hidden="true">
+            <i class="moon"></i><i class="star s1"></i><i class="star s2"></i>
+            <div class="roof r1"></div><div class="roof r2"></div>
+          </div>
+          <div class="chef-wrap">
+            <img id="chef" src="assets/cat-chef.svg" alt="阿汤">
+          </div>
+          <div class="stove-glow" aria-hidden="true"></div>
+          <div class="bowl-wrap">
+            <div class="steam" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="bowl" id="bowl">
+              <div class="bowl-inner">
+                <div class="broth" id="broth"></div>
+                <span class="topping topping-noodle" data-top="noodle"></span>
+                <span class="topping topping-egg" data-top="egg"></span>
+                <span class="topping topping-chashu" data-top="chashu"></span>
+                <span class="topping topping-nori" data-top="nori"></span>
+                <div class="bowl-splash" id="bowlSplash" aria-hidden="true"></div>
+              </div>
+              <div class="bowl-rim"></div>
+              <div class="bowl-band"></div>
+              <div class="bowl-cat"><i></i><b>猫</b></div>
+            </div>
+            <div class="bowl-count"><b id="bowlCount">0</b><span> / <i id="bowlTotal">26</i></span></div>
+          </div>
+          <div class="kitchen-caption">咕嘟咕嘟…</div>
+          <div id="praiseBubble" class="praise-bubble hidden" aria-live="polite"></div>
+        </aside>
+      </main>
+
+      <footer class="bottom-bar">
+        <div class="stars-goals">
+          <div class="star-goal" data-star="1">
+            <svg class="star-icon"><use href="#i-star"></use></svg>
+            <span><b>端上面</b><small>完成订单</small></span>
+          </div>
+          <div class="star-goal" data-star="2">
+            <svg class="star-icon hollow"><use href="#i-star"></use></svg>
+            <span><b>剩 2 步</b><small>别煮过头</small></span>
+          </div>
+          <div class="star-goal" data-star="3">
+            <svg class="star-icon hollow"><use href="#i-star"></use></svg>
+            <span><b>锅气全开</b><small>放一次大招</small></span>
+          </div>
+        </div>
+
+        <div class="gauge-block">
+          <div class="gauge-flame">
+            <svg class="icon"><use href="#i-flame"></use></svg>
+          </div>
+          <div class="gauge-main">
+            <div class="gauge-label">锅气 <span id="gaugeNum">0%</span><small>WOK HEI</small></div>
+            <div class="gauge" id="gauge"><i id="gaugeFill"></i></div>
+          </div>
+          <button id="ultimateBtn" class="ultimate-btn hidden" type="button">
+            锅气全开！
+            <small>点棋盘任意位置</small>
+          </button>
+        </div>
+
+        <div id="streakChip" class="streak-chip" aria-live="polite">
+          <span class="streak-label">成功</span>
+          <span class="streak-pips">
+            <i><svg class="icon"><use href="#i-flame"></use></svg></i>
+            <i><svg class="icon"><use href="#i-flame"></use></svg></i>
+            <i><svg class="icon"><use href="#i-flame"></use></svg></i>
+          </span>
+          <b id="streakCount">0</b>
+        </div>
+
+        <button id="hintBtn" class="hint-btn" type="button">
+          <svg class="icon"><use href="#i-paw"></use></svg>
+          提示
+        </button>
+      </footer>
+
+      <div class="tutorial-tip hidden" id="tutorialTip"></div>
+    </section>
+
+    <!-- ================= FX ================= -->
+    <canvas id="fx" aria-hidden="true"></canvas>
+    <div id="flash" class="flash" aria-hidden="true"></div>
+    <div id="comboBadge" class="combo-badge hidden">连击 <b>x2</b></div>
+    <div id="comboBanner" class="combo-banner hidden" aria-live="polite">
+      <span class="cb-kicker">COMBO</span>
+      <div class="cb-main"><b id="comboBannerNum">3</b><span id="comboBannerTitle">三连击!</span></div>
+      <div class="cb-sub" id="comboBannerSub">火候正好</div>
+      <div class="cb-pips" id="comboBannerPips"><i></i><i></i><i></i><i></i><i></i></div>
+    </div>
+    <div id="successBanner" class="success-banner hidden" aria-live="polite">
+      <div class="sb-rays" aria-hidden="true"></div>
+      <div class="sb-stamp">三连成功!</div>
+      <div class="sb-sub">火候正好 · 锅气 +2</div>
+      <div class="sb-pips" aria-hidden="true"><i>✦</i><i>✦</i><i>✦</i></div>
+    </div>
+    <div id="ultimateBanner" class="ultimate-banner hidden" aria-hidden="true">
+      <span>锅气全开！</span>
+      <small>WOK HEI MAX</small>
+    </div>
+    <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+    <!-- ================= OVERLAYS ================= -->
+    <div id="serveOverlay" class="overlay serve-overlay hidden">
+      <div class="serve-stage">
+        <div class="serve-bowl"><img src="assets/bowl.svg" alt="刚出锅的拉面"></div>
+        <div class="serve-customer">
+          <div class="serve-portrait"><img src="assets/characters/doucha-portrait.png" alt="豆柴"></div>
+          <div class="serve-speech">……还行。<br>再来一碗。</div>
+        </div>
+        <div class="serve-stars" id="serveStars"></div>
+        <div class="serve-tap">点击继续</div>
+      </div>
+    </div>
+
+    <div id="winOverlay" class="overlay hidden">
+      <div class="modal win-modal">
+        <div class="win-ribbon">第一碗 · 完成</div>
+        <div class="win-top">
+          <div class="win-portrait"><img src="assets/characters/doucha-portrait.png" alt="豆柴"></div>
+          <div class="win-polaroid"><img src="assets/characters/doucha.png" alt="豆柴的拍立得"></div>
+        </div>
+        <h2>端上桌啦！</h2>
+        <p class="win-quote">“……”<br>豆柴没说好喝，但碗已经空了。</p>
+        <div id="winStars" class="win-stars"></div>
+        <div id="winStats" class="win-stats"></div>
+        <div class="modal-actions">
+          <button id="playAgainBtn" class="btn btn-primary" type="button">再来一碗</button>
+          <button id="nextLevelBtn" class="btn btn-soft" type="button">
+            <svg class="icon"><use href="#i-lock"></use></svg>
+            第 2 关 · 敬请期待
+          </button>
+          <button id="winTitleBtn" class="btn-text" type="button">回到标题</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="failOverlay" class="overlay hidden">
+      <div class="modal fail-modal">
+        <div class="fail-portrait"><img src="assets/characters/doucha-portrait.png" alt="豆柴"></div>
+        <h2>汤凉了……</h2>
+        <p>豆柴还在等他的面。</p>
+        <div class="modal-actions">
+          <button id="rescueBtn" class="btn btn-primary" type="button">再煮三分钟 <small>+3 步</small></button>
+          <button id="retryBtn" class="btn btn-soft" type="button">重新煮一碗</button>
+          <button id="failTitleBtn" class="btn-text" type="button">回到标题</button>
+        </div>
+        <p id="failHint" class="fail-hint">每关只有一次救场机会。</p>
+      </div>
+    </div>
+
+    <div id="pauseOverlay" class="overlay hidden">
+      <div class="modal pause-modal">
+        <div class="pause-steam" aria-hidden="true"><i></i><i></i><i></i></div>
+        <h2>歇一会儿</h2>
+        <p>老汤还在咕嘟咕嘟。</p>
+        <div class="modal-actions pause-actions">
+          <button id="resumeBtn" class="btn btn-primary" type="button">继续煮</button>
+          <button id="pauseRestartBtn" class="btn btn-soft" type="button">重新煮一碗</button>
+          <button id="pauseSoundBtn" class="btn btn-soft" type="button">音效：开</button>
+          <button id="pauseTitleBtn" class="btn-text" type="button">回到标题</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

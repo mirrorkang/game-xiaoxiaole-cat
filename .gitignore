@@ -1,0 +1,5 @@
+.DS_Store
+design/
+screenshots/
+*.zip
+node_modules/
