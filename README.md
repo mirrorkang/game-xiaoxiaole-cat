@@ -3,7 +3,7 @@
 一个可以直接在浏览器里玩的消消乐小游戏。  
 **消食材 → 下锅 → 锅气全开 → 把第一碗面端给豆柴。**
 
-> **在线试玩**：<https://mirrorkang.github.io/cat-ramen-match3/>  
+> **在线试玩**：<https://mirrorkang.github.io/game-xiaoxiaole-cat/>  
 > **版本**：v1.0.0 · 第一关样片
 
 ![标题页](preview-title.png)
@@ -128,6 +128,6 @@ cat-ramen-match3/
 
 ## 发布信息
 
-- 在线试玩：<https://mirrorkang.github.io/cat-ramen-match3/>
-- 源码仓库：<https://github.com/mirrorkang/cat-ramen-match3>
-- 下载最新版：<https://github.com/mirrorkang/cat-ramen-match3/releases/latest>
+- 在线试玩：<https://mirrorkang.github.io/game-xiaoxiaole-cat/>
+- 源码仓库：<https://github.com/mirrorkang/game-xiaoxiaole-cat>
+- 下载最新版：<https://github.com/mirrorkang/game-xiaoxiaole-cat/releases/latest>
