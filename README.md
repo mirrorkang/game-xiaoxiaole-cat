@@ -1,14 +1,42 @@
-# 猫猫拉面屋 · 第一关
+# 猫猫拉面屋 · 锅气全开！
 
-一个可以直接在浏览器里玩的消消乐小游戏。  
+### Cat Ramen Shop · Wok Hei Overload!
+
+**中文** | [English](README.en.md)
+
+![猫猫拉面屋主视觉 / Cat Ramen Shop key visual](cover.jpg)
+
+一个可以直接在浏览器里玩的猫咪拉面主题消消乐。  
 **消食材 → 下锅 → 锅气全开 → 把第一碗面端给豆柴。**
 
 > **在线试玩**：<https://mirrorkang.github.io/game-xiaoxiaole-cat/>  
-> **版本**：v1.0.0 · 第一关样片
+> **版本**：v1.0.0 · 第一关样片  
+> **下载**：<https://github.com/mirrorkang/game-xiaoxiaole-cat/releases/latest>
 
-![标题页](preview-title.png)
+---
 
-![游戏画面](preview-game.png)
+## 中文简介
+
+《猫猫拉面屋》是一款猫咪拉面主题的浏览器消消乐。你扮演橘猫阿汤，把食材消进锅里，替客人煮出一碗碗拉面。第一关样片已经可以完整体验：8×8 棋盘、订单碗、特殊食材、锅气全开、三星结算和失败救场。
+
+- **类型**：消消乐 / 料理 / 休闲
+- **平台**：桌面和手机浏览器
+- **技术**：原生 HTML / CSS / JavaScript + WebAudio
+- **在线试玩**：<https://mirrorkang.github.io/game-xiaoxiaole-cat/>
+
+## English Overview
+
+**Cat Ramen Shop** is a cozy, cat-themed match-3 browser game. You play as Atang, an orange cat chef who matches ingredients into a steaming bowl, fills customers' ramen orders, and unleashes the power of "Wok Hei."
+
+This public build is a polished one-level vertical slice with an 8×8 board, a live order bowl, special ingredients, a wok-hei ultimate, a three-star rating, and a forgiving retry system.
+
+- **Genre**: match-3 / cooking / casual
+- **Platform**: desktop and mobile web
+- **Tech**: vanilla HTML, CSS, JavaScript and WebAudio
+- **Live demo**: <https://mirrorkang.github.io/game-xiaoxiaole-cat/>
+- **Full English description**: [README.en.md](README.en.md)
+
+---
 
 ## 小店的故事
 
@@ -22,9 +50,10 @@
 
 ## 怎么打开
 
-最简单：**双击 `index.html`**，用 Chrome / Edge / Safari 打开。
+**在线版**：直接打开 <https://mirrorkang.github.io/game-xiaoxiaole-cat/>。
 
-如果浏览器对本地文件比较严格，可以在本文件夹打开终端，运行：
+**本地版**：双击 `index.html`，用 Chrome / Edge / Safari 打开。  
+如果浏览器对本地文件比较严格，可以在本文件夹运行：
 
 ```bash
 python3 -m http.server 8000
@@ -90,14 +119,14 @@ python3 -m http.server 8000
 - **豆柴**：第一关客人，傲娇嘴硬，吃完真香。
 - 其他角色（熊大叔、团子、墨墨、咪娜、花花）在角色设定板里，等你解锁后面的关卡。
 
-角色原画由制作人提供。
+角色原画与主视觉由制作人提供。
 
 ---
 
 ## 文件结构
 
 ```text
-cat-ramen-match3/
+game-xiaoxiaole-cat/
 ├── index.html          # 游戏入口
 ├── styles.css          # 界面、棋盘、动画样式
 ├── game.js             # 游戏逻辑
@@ -106,8 +135,11 @@ cat-ramen-match3/
 │   ├── bowl.svg        # 上菜用的拉面碗
 │   └── characters/     # 阿汤、豆柴立绘
 ├── favicon.svg         # 拉面猫站点图标
+├── cover.jpg           # 中英文项目主视觉
+├── cover-social.jpg    # 网页分享卡片
 ├── preview-title.png   # 标题页预览
 ├── preview-game.png    # 游戏画面预览
+├── README.en.md        # English README
 └── README.md
 ```
 
